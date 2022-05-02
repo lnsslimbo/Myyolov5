@@ -1,5 +1,4 @@
 yolov5
-Opencv
 Boost
 Cmake
 Dlib
@@ -7,7 +6,7 @@ torch==1.9.1
 torchvision==0.10.1
 imutils
 matplotlib
-opencv-python
+opencv-python
 pandas
 numpy
 pillow
