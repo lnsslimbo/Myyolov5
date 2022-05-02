@@ -68,8 +68,7 @@ class CamConfig:
         # 设置时钟
         self.v_timer = QTimer()
         # 打开摄像头
-## 我添加了 cv2.CAP_DSHOW，若有错可以删掉
-        self.cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+        self.cap = cv2.VideoCapture(0)
         if not self.cap:
             Ui_MainWindow.printf(window,"打开摄像头失败")
             return
