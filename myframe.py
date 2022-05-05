@@ -20,8 +20,8 @@ def frametest(frame):
     # Dlib疲劳检测
     # eye 眼睛开合程度
     # mouth 嘴巴开合程度
-    frame,eye,mouth = myfatigue.detfatigue(frame)
-    
+    # head 头部旋转角度
+    frame,eye,mouth,head = myfatigue.detfatigue(frame)
 
     # yolo检测
     action = mydetect.predict(frame)
@@ -29,7 +29,7 @@ def frametest(frame):
         # 在labellist加入当前label
         labellist.append(label)
 
-        # 将标签和置信度何在一起
+        # 将标签和置信度合在一起
         text = label + str(prob)
 
         # 画出识别框
@@ -46,7 +46,7 @@ def frametest(frame):
     ret.append(labellist)
     ret.append(round(eye,3))
     ret.append(round(mouth,3))
-
+    ret.append(round(head,3))
     # 计时结束
     tend = time.time()
     # 计算fps
